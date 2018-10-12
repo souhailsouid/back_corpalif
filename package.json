@@ -1,19 +1,25 @@
 {
-  "name": "back_corpalif",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "back",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "2.0.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/souhailsouid/back_corpalif.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "author": "souhail",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/souhailsouid/back_corpalif/issues"
-  },
-  "homepage": "https://github.com/souhailsouid/back_corpalif#readme"
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
