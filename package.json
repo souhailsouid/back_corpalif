@@ -3,18 +3,30 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"async": "^2.6.1",
+		"async-waterfall": "^0.1.5",
+		"bcrypt": "^3.0.2",
 		"bcryptjs": "^2.4.3",
 		"body-parser": "^1.18.3",
+		"cors": "^2.8.4",
 		"express": "^4.16.4",
+		"express-flash": "0.0.2",
+		"express-session": "^1.15.6",
 		"gravatar": "^1.6.0",
 		"jsonwebtoken": "^8.3.0",
+		"lodash": "^4.17.11",
 		"mongoose": "^5.3.3",
+		"nodemailer": "^4.6.8",
+		"nodemailer-express-handlebars": "^3.0.0",
 		"passport": "^0.4.0",
 		"passport-jwt": "^4.0.0",
+		"passport-local-mongoose": "^5.0.1",
+		"password-reset": "^0.1.4",
 		"react": "^16.5.2",
 		"react-dom": "^16.5.2",
 		"react-scripts": "2.0.4",
-		"validator": "^10.8.0"
+		"validator": "^10.8.0",
+		"whatwg-fetch": "^3.0.0"
 	},
 	"scripts": {
 		"start": "node server.js",
@@ -23,13 +35,14 @@
 	"eslintConfig": {
 		"extends": "react-app"
 	},
-	"browserslist": [
-		">0.2%",
-		"not dead",
-		"not ie <= 11",
-		"not op_mini all"
-	],
+	"browserslist": [ ">0.2%", "not dead", "not ie <= 11", "not op_mini all" ],
 	"devDependencies": {
 		"nodemon": "^1.18.4"
+	},
+	"proxy": {
+		"/socket": {
+			"target": "ws://localhost:5000",
+			"ws": true
+		}
 	}
 }

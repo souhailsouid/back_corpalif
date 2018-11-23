@@ -15,15 +15,26 @@ const ProfileSchema = new Schema({
 	company: {
 		type: String
 	},
-	structure: {
-		type: String,
-		required: true
+	website: {
+		type: String
 	},
 	location: {
+		type: String
+	},
+	status: {
 		type: String,
 		required: true
 	},
-
+	skills: {
+		type: [ String ],
+		required: true
+	},
+	bio: {
+		type: String
+	},
+	githubusername: {
+		type: String
+	},
 	experience: [
 		{
 			title: {
@@ -35,6 +46,35 @@ const ProfileSchema = new Schema({
 				required: true
 			},
 			location: {
+				type: String
+			},
+			from: {
+				type: Date,
+				required: true
+			},
+			to: {
+				type: Date
+			},
+			current: {
+				type: Boolean,
+				default: false
+			},
+			description: {
+				type: String
+			}
+		}
+	],
+	education: [
+		{
+			school: {
+				type: String,
+				required: true
+			},
+			degree: {
+				type: String,
+				required: true
+			},
+			fieldofstudy: {
 				type: String,
 				required: true
 			},
@@ -51,49 +91,23 @@ const ProfileSchema = new Schema({
 			},
 			description: {
 				type: String
-			},
-			skills: {
-				type: [ String ],
-				required: true
-			}
-		}
-	],
-	education: [
-		{
-			school: {
-				type: String,
-				required: true
-			},
-			degree: {
-				type: String,
-				required: true
-			},
-			field: {
-				type: String,
-				required: true
-			},
-			from: {
-				type: Date,
-				required: true
-			},
-			to: {
-				type: Date
-			},
-			current: {
-				type: Boolean,
-				default: false
-			},
-			location: {
-				type: String
-			},
-			skills: {
-				type: [ String ],
-				required: true
 			}
 		}
 	],
 	social: {
+		youtube: {
+			type: String
+		},
+		twitter: {
+			type: String
+		},
+		facebook: {
+			type: String
+		},
 		linkedin: {
+			type: String
+		},
+		instagram: {
 			type: String
 		}
 	},
@@ -102,4 +116,5 @@ const ProfileSchema = new Schema({
 		default: Date.now
 	}
 })
+
 module.exports = Profile = mongoose.model('profile', ProfileSchema)
